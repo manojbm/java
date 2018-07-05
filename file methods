@@ -1,0 +1,35 @@
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.IOException;
+
+
+public class filedemo {
+ 	private static final boolean True = false;
+
+	public static void main(String args[]) throws IOException
+	{
+		DataInputStream in=new DataInputStream(System.in); 
+		String s =" ";
+		System.out.println("enter the file name");
+		s=in.readLine();
+		File f1=new File(s);
+		if (f1.exists()==True)
+		{
+			System.out.println("the file is "+f1.exists());
+			System.out.println("the file name is "+f1.getName());
+			System.out.println("the file path is "+f1.getPath());
+			System.out.println("the absolute path is "+f1.getAbsolutePath());
+			System.out.println("hash code is "+f1.hashCode());
+			System.out.println("parent file is "+f1.getParent());
+			System.out.println("total space is "+f1.getTotalSpace());
+			System.out.println("usable space is"+f1.getFreeSpace());
+			System.out.println("the length is "+f1.length());
+			System.out.println("last modified "+f1.lastModified());
+			System.out.println("writable "+f1.canWrite());
+			System.out.println("readable "+f1.canRead());
+			System.out.println("executable "+f1.canExecute());
+		}
+		else
+			System.out.println("the file does not exist");
+	}
+}
